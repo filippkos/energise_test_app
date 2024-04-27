@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00CD2DF7ED3AF82E5B090669 /* Pods_EnegriseTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29575DAE16FBACDF4009F427 /* Pods_EnegriseTestApp.framework */; };
+		22C62A5F2BDAC25D00B968EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A5E2BDAC25D00B968EA /* AppDelegate.swift */; };
+		22C62A682BDAC26100B968EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C62A672BDAC26100B968EA /* Assets.xcassets */; };
+		22C62A6B2BDAC26100B968EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C62A692BDAC26100B968EA /* LaunchScreen.storyboard */; };
+		22C62A852BDACA8100B968EA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A842BDACA8100B968EA /* TabBarController.swift */; };
+		22C62A872BDACB3C00B968EA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A862BDACB3C00B968EA /* TimerViewController.swift */; };
+		22C62A8A2BDACBBB00B968EA /* UIViewController+ViewCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A892BDACBBB00B968EA /* UIViewController+ViewCast.swift */; };
+		22C62A8C2BDACC0500B968EA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A8B2BDACC0500B968EA /* TimerView.swift */; };
+		22C62A8F2BDAEE9900B968EA /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A8E2BDAEE9900B968EA /* LocationSearchViewController.swift */; };
+		22C62A912BDAEEB900B968EA /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A902BDAEEB900B968EA /* LocationSearchView.swift */; };
+		22C62A952BDAF07500B968EA /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A942BDAF07500B968EA /* AboutAppViewController.swift */; };
+		22C62A972BDAF08D00B968EA /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A962BDAF08D00B968EA /* AboutAppView.swift */; };
+		22C62A992BDBEE2100B968EA /* IPLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A982BDBEE2100B968EA /* IPLocationModel.swift */; };
+		22C62A9C2BDC368800B968EA /* LocationSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62A9B2BDC368800B968EA /* LocationSearchTableViewCell.swift */; };
+		22C62AA12BDC4F5400B968EA /* AboutAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AA02BDC4F5400B968EA /* AboutAppCollectionViewCell.swift */; };
+		22C62AA42BDCF3A400B968EA /* swiftgen-config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22C62AA32BDCF3A400B968EA /* swiftgen-config.yml */; };
+		22C62AAA2BDCF69C00B968EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C62AA92BDCF69C00B968EA /* Colors.xcassets */; };
+		22C62AAC2BDCF6B900B968EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C62AAB2BDCF6B900B968EA /* Images.xcassets */; };
+		22C62AB02BDCF9AC00B968EA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AAD2BDCF9AC00B968EA /* Colors.swift */; };
+		22C62AB12BDCF9AC00B968EA /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AAE2BDCF9AC00B968EA /* Images.swift */; };
+		22C62AB22BDCF9AC00B968EA /* L10n-Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AAF2BDCF9AC00B968EA /* L10n-Constants.swift */; };
+		22C62AB52BDCFE1300B968EA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AB42BDCFE1300B968EA /* RoundedButton.swift */; };
+		22C62AB82BDD00B500B968EA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AB72BDD00B500B968EA /* Timer.swift */; };
+		22C62ABB2BDD00F800B968EA /* AnimatesLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62ABA2BDD00F800B968EA /* AnimatesLabel.swift */; };
+		22C62ABD2BDD015300B968EA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62ABC2BDD015300B968EA /* UIView+Extensions.swift */; };
+		22C62ABF2BDD017200B968EA /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62ABE2BDD017200B968EA /* Int+Extensions.swift */; };
+		22C62AC02BDD2F3800B968EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22C62AC22BDD2F3800B968EA /* Localizable.strings */; };
+		22C62AC82BDD531700B968EA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C62AC72BDD531700B968EA /* Storage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22C62A5B2BDAC25D00B968EA /* EnegriseTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnegriseTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C62A5E2BDAC25D00B968EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22C62A672BDAC26100B968EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22C62A6A2BDAC26100B968EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22C62A6C2BDAC26100B968EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22C62A842BDACA8100B968EA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		22C62A862BDACB3C00B968EA /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		22C62A892BDACBBB00B968EA /* UIViewController+ViewCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ViewCast.swift"; sourceTree = "<group>"; };
+		22C62A8B2BDACC0500B968EA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		22C62A8E2BDAEE9900B968EA /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		22C62A902BDAEEB900B968EA /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		22C62A942BDAF07500B968EA /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		22C62A962BDAF08D00B968EA /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		22C62A982BDBEE2100B968EA /* IPLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPLocationModel.swift; sourceTree = "<group>"; };
+		22C62A9B2BDC368800B968EA /* LocationSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewCell.swift; sourceTree = "<group>"; };
+		22C62AA02BDC4F5400B968EA /* AboutAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCollectionViewCell.swift; sourceTree = "<group>"; };
+		22C62AA32BDCF3A400B968EA /* swiftgen-config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "swiftgen-config.yml"; sourceTree = "<group>"; };
+		22C62AA92BDCF69C00B968EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		22C62AAB2BDCF6B900B968EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22C62AAD2BDCF9AC00B968EA /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		22C62AAE2BDCF9AC00B968EA /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		22C62AAF2BDCF9AC00B968EA /* L10n-Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "L10n-Constants.swift"; sourceTree = "<group>"; };
+		22C62AB42BDCFE1300B968EA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		22C62AB72BDD00B500B968EA /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		22C62ABA2BDD00F800B968EA /* AnimatesLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatesLabel.swift; sourceTree = "<group>"; };
+		22C62ABC2BDD015300B968EA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		22C62ABE2BDD017200B968EA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		22C62AC12BDD2F3800B968EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		22C62AC32BDD2F7B00B968EA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		22C62AC42BDD2F7B00B968EA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		22C62AC72BDD531700B968EA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		29575DAE16FBACDF4009F427 /* Pods_EnegriseTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnegriseTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DEB935613EC9876FC3CC21F /* Pods-EnegriseTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnegriseTestApp.debug.xcconfig"; path = "Target Support Files/Pods-EnegriseTestApp/Pods-EnegriseTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E53C6E196F5767560ECC47F5 /* Pods-EnegriseTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnegriseTestApp.release.xcconfig"; path = "Target Support Files/Pods-EnegriseTestApp/Pods-EnegriseTestApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22C62A582BDAC25D00B968EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CD2DF7ED3AF82E5B090669 /* Pods_EnegriseTestApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07BC3C10FAB81C0ADA1A1BD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DEB935613EC9876FC3CC21F /* Pods-EnegriseTestApp.debug.xcconfig */,
+				E53C6E196F5767560ECC47F5 /* Pods-EnegriseTestApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		22C62A522BDAC25D00B968EA = {
+			isa = PBXGroup;
+			children = (
+				22C62A5D2BDAC25D00B968EA /* EnegriseTestApp */,
+				22C62A5C2BDAC25D00B968EA /* Products */,
+				07BC3C10FAB81C0ADA1A1BD4 /* Pods */,
+				EC8EF26025B7860056B2510C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		22C62A5C2BDAC25D00B968EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A5B2BDAC25D00B968EA /* EnegriseTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22C62A5D2BDAC25D00B968EA /* EnegriseTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A742BDAC46200B968EA /* Libs */,
+				22C62A722BDAC44600B968EA /* Source */,
+				22C62A5E2BDAC25D00B968EA /* AppDelegate.swift */,
+				22C62A672BDAC26100B968EA /* Assets.xcassets */,
+				22C62A692BDAC26100B968EA /* LaunchScreen.storyboard */,
+				22C62A6C2BDAC26100B968EA /* Info.plist */,
+			);
+			path = EnegriseTestApp;
+			sourceTree = "<group>";
+		};
+		22C62A722BDAC44600B968EA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AC52BDD52D700B968EA /* Storage */,
+				22C62AB62BDD00A500B968EA /* Timer */,
+				22C62A782BDAC48E00B968EA /* UI */,
+				22C62A772BDAC48800B968EA /* F */,
+				22C62A762BDAC48100B968EA /* Models */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		22C62A742BDAC46200B968EA /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A752BDAC46800B968EA /* Resource */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		22C62A752BDAC46800B968EA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AA22BDCF23B00B968EA /* Generated */,
+				22C62AA32BDCF3A400B968EA /* swiftgen-config.yml */,
+				22C62AA92BDCF69C00B968EA /* Colors.xcassets */,
+				22C62AAB2BDCF6B900B968EA /* Images.xcassets */,
+				22C62AC22BDD2F3800B968EA /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		22C62A762BDAC48100B968EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A982BDBEE2100B968EA /* IPLocationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22C62A772BDAC48800B968EA /* F */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A882BDACBA000B968EA /* Extensions */,
+			);
+			path = F;
+			sourceTree = "<group>";
+		};
+		22C62A782BDAC48E00B968EA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A832BDACA6900B968EA /* TabBarController */,
+				22C62A792BDAC4A000B968EA /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		22C62A792BDAC4A000B968EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A7A2BDAC4A800B968EA /* TimerViewController */,
+				22C62A7B2BDAC55900B968EA /* LocationSearchViewController */,
+				22C62A7C2BDAC57C00B968EA /* AboutAppViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22C62A7A2BDAC4A800B968EA /* TimerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AB32BDCFDFE00B968EA /* Views */,
+				22C62A862BDACB3C00B968EA /* TimerViewController.swift */,
+				22C62A8B2BDACC0500B968EA /* TimerView.swift */,
+			);
+			path = TimerViewController;
+			sourceTree = "<group>";
+		};
+		22C62A7B2BDAC55900B968EA /* LocationSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A9A2BDC366600B968EA /* LocationSearchTableViewCell */,
+				22C62A8E2BDAEE9900B968EA /* LocationSearchViewController.swift */,
+				22C62A902BDAEEB900B968EA /* LocationSearchView.swift */,
+			);
+			path = LocationSearchViewController;
+			sourceTree = "<group>";
+		};
+		22C62A7C2BDAC57C00B968EA /* AboutAppViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A9F2BDC4F1E00B968EA /* AboutAppCollectionViewCell */,
+				22C62A942BDAF07500B968EA /* AboutAppViewController.swift */,
+				22C62A962BDAF08D00B968EA /* AboutAppView.swift */,
+			);
+			path = AboutAppViewController;
+			sourceTree = "<group>";
+		};
+		22C62A832BDACA6900B968EA /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A842BDACA8100B968EA /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		22C62A882BDACBA000B968EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A892BDACBBB00B968EA /* UIViewController+ViewCast.swift */,
+				22C62ABC2BDD015300B968EA /* UIView+Extensions.swift */,
+				22C62ABE2BDD017200B968EA /* Int+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		22C62A9A2BDC366600B968EA /* LocationSearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				22C62A9B2BDC368800B968EA /* LocationSearchTableViewCell.swift */,
+			);
+			path = LocationSearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		22C62A9F2BDC4F1E00B968EA /* AboutAppCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AA02BDC4F5400B968EA /* AboutAppCollectionViewCell.swift */,
+			);
+			path = AboutAppCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		22C62AA22BDCF23B00B968EA /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AAD2BDCF9AC00B968EA /* Colors.swift */,
+				22C62AAE2BDCF9AC00B968EA /* Images.swift */,
+				22C62AAF2BDCF9AC00B968EA /* L10n-Constants.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		22C62AB32BDCFDFE00B968EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AB42BDCFE1300B968EA /* RoundedButton.swift */,
+				22C62ABA2BDD00F800B968EA /* AnimatesLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22C62AB62BDD00A500B968EA /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AB72BDD00B500B968EA /* Timer.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		22C62AC52BDD52D700B968EA /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				22C62AC72BDD531700B968EA /* Storage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		EC8EF26025B7860056B2510C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29575DAE16FBACDF4009F427 /* Pods_EnegriseTestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22C62A5A2BDAC25D00B968EA /* EnegriseTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22C62A6F2BDAC26100B968EA /* Build configuration list for PBXNativeTarget "EnegriseTestApp" */;
+			buildPhases = (
+				4B3B4FA3F76D33548E067B91 /* [CP] Check Pods Manifest.lock */,
+				22C62AA52BDCF54B00B968EA /* SwiftGen */,
+				22C62A572BDAC25D00B968EA /* Sources */,
+				22C62A582BDAC25D00B968EA /* Frameworks */,
+				22C62A592BDAC25D00B968EA /* Resources */,
+				E7986107B7C353865E100EC8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnegriseTestApp;
+			productName = EnegriseTestApp;
+			productReference = 22C62A5B2BDAC25D00B968EA /* EnegriseTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22C62A532BDAC25D00B968EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					22C62A5A2BDAC25D00B968EA = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 22C62A562BDAC25D00B968EA /* Build configuration list for PBXProject "EnegriseTestApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = 22C62A522BDAC25D00B968EA;
+			productRefGroup = 22C62A5C2BDAC25D00B968EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22C62A5A2BDAC25D00B968EA /* EnegriseTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22C62A592BDAC25D00B968EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C62AAA2BDCF69C00B968EA /* Colors.xcassets in Resources */,
+				22C62A6B2BDAC26100B968EA /* LaunchScreen.storyboard in Resources */,
+				22C62AC02BDD2F3800B968EA /* Localizable.strings in Resources */,
+				22C62AAC2BDCF6B900B968EA /* Images.xcassets in Resources */,
+				22C62A682BDAC26100B968EA /* Assets.xcassets in Resources */,
+				22C62AA42BDCF3A400B968EA /* swiftgen-config.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22C62AA52BDCF54B00B968EA /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/SwiftGen/bin/swiftgen\" config run --config \"$SRCROOT/EnegriseTestApp/Libs/Resource/swiftgen-config.yml\"\n";
+		};
+		4B3B4FA3F76D33548E067B91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnegriseTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7986107B7C353865E100EC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnegriseTestApp/Pods-EnegriseTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnegriseTestApp/Pods-EnegriseTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnegriseTestApp/Pods-EnegriseTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22C62A572BDAC25D00B968EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C62A8A2BDACBBB00B968EA /* UIViewController+ViewCast.swift in Sources */,
+				22C62AC82BDD531700B968EA /* Storage.swift in Sources */,
+				22C62A8C2BDACC0500B968EA /* TimerView.swift in Sources */,
+				22C62ABD2BDD015300B968EA /* UIView+Extensions.swift in Sources */,
+				22C62A952BDAF07500B968EA /* AboutAppViewController.swift in Sources */,
+				22C62AB02BDCF9AC00B968EA /* Colors.swift in Sources */,
+				22C62AB22BDCF9AC00B968EA /* L10n-Constants.swift in Sources */,
+				22C62A852BDACA8100B968EA /* TabBarController.swift in Sources */,
+				22C62A912BDAEEB900B968EA /* LocationSearchView.swift in Sources */,
+				22C62AB82BDD00B500B968EA /* Timer.swift in Sources */,
+				22C62ABB2BDD00F800B968EA /* AnimatesLabel.swift in Sources */,
+				22C62AB12BDCF9AC00B968EA /* Images.swift in Sources */,
+				22C62A992BDBEE2100B968EA /* IPLocationModel.swift in Sources */,
+				22C62AA12BDC4F5400B968EA /* AboutAppCollectionViewCell.swift in Sources */,
+				22C62AB52BDCFE1300B968EA /* RoundedButton.swift in Sources */,
+				22C62A872BDACB3C00B968EA /* TimerViewController.swift in Sources */,
+				22C62A9C2BDC368800B968EA /* LocationSearchTableViewCell.swift in Sources */,
+				22C62A5F2BDAC25D00B968EA /* AppDelegate.swift in Sources */,
+				22C62ABF2BDD017200B968EA /* Int+Extensions.swift in Sources */,
+				22C62A8F2BDAEE9900B968EA /* LocationSearchViewController.swift in Sources */,
+				22C62A972BDAF08D00B968EA /* AboutAppView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		22C62A692BDAC26100B968EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22C62A6A2BDAC26100B968EA /* Base */,
+				22C62AC32BDD2F7B00B968EA /* de */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		22C62AC22BDD2F3800B968EA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22C62AC12BDD2F3800B968EA /* en */,
+				22C62AC42BDD2F7B00B968EA /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22C62A6D2BDAC26100B968EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22C62A6E2BDAC26100B968EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22C62A702BDAC26100B968EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DEB935613EC9876FC3CC21F /* Pods-EnegriseTestApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnegriseTestApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None.EnegriseTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22C62A712BDAC26100B968EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E53C6E196F5767560ECC47F5 /* Pods-EnegriseTestApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EnegriseTestApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = None.EnegriseTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22C62A562BDAC25D00B968EA /* Build configuration list for PBXProject "EnegriseTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22C62A6D2BDAC26100B968EA /* Debug */,
+				22C62A6E2BDAC26100B968EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22C62A6F2BDAC26100B968EA /* Build configuration list for PBXNativeTarget "EnegriseTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22C62A702BDAC26100B968EA /* Debug */,
+				22C62A712BDAC26100B968EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22C62A532BDAC25D00B968EA /* Project object */;
+}
