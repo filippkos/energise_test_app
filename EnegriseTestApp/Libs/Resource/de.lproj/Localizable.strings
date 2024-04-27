@@ -1,0 +1,30 @@
+//
+//  Localizable.strings
+//  EnegriseTestApp
+//
+//  Created by Filipp Kosenko on 25.04.2024.
+//
+
+// MARK: -
+// MARK: Dashboard
+
+"localization_search.button_title" = "Neu laden";
+
+"localization_search.location_model.status" = "Status";
+"localization_search.location_model.country" = "Land";
+"localization_search.location_model.country_code" = "Landesvorwahl";
+"localization_search.location_model.region" = "Region";
+"localization_search.location_model.region_name" = "Regionsname";
+"localization_search.location_model.city" = "Stadt";
+"localization_search.location_model.zip" = "PLZ";
+"localization_search.location_model.latitude" = "Breite";
+"localization_search.location_model.longitude" = "Längengrad";
+"localization_search.location_model.timezone" = "Zeitzone";
+"localization_search.location_model.isp" = "ISP";
+"localization_search.location_model.organization_name" = "Name der Organisation";
+"localization_search.location_model.as_number" = "AS-Nummer und Organisation";
+"localization_search.location_model.query" = "Abfrage";
+
+"about_app.rate" = "Bewertungs App";
+"about_app.share" = "App teilen";
+"about_app.contact_us" = "Kontaktiere uns";
