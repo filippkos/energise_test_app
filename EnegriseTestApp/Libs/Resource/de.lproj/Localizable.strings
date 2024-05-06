@@ -8,22 +8,26 @@
 // MARK: -
 // MARK: Dashboard
 
-"localization_search.button_title" = "Neu laden";
+"tab_bar.item.timer" = "Timer";
+"tab_bar.item.location" = "Standort";
+"tab_bar.item.about" = "Um";
 
-"localization_search.location_model.status" = "Status";
-"localization_search.location_model.country" = "Land";
-"localization_search.location_model.country_code" = "Landesvorwahl";
-"localization_search.location_model.region" = "Region";
-"localization_search.location_model.region_name" = "Regionsname";
-"localization_search.location_model.city" = "Stadt";
-"localization_search.location_model.zip" = "PLZ";
-"localization_search.location_model.latitude" = "Breite";
-"localization_search.location_model.longitude" = "Längengrad";
-"localization_search.location_model.timezone" = "Zeitzone";
-"localization_search.location_model.isp" = "ISP";
-"localization_search.location_model.organization_name" = "Name der Organisation";
-"localization_search.location_model.as_number" = "AS-Nummer und Organisation";
-"localization_search.location_model.query" = "Abfrage";
+"location_search.button_title" = "Neu laden";
+
+"location_search.location_model.status" = "Status";
+"location_search.location_model.country" = "Land";
+"location_search.location_model.country_code" = "Landesvorwahl";
+"location_search.location_model.region" = "Region";
+"location_search.location_model.region_name" = "Regionsname";
+"location_search.location_model.city" = "Stadt";
+"location_search.location_model.zip" = "PLZ";
+"location_search.location_model.latitude" = "Breite";
+"location_search.location_model.longitude" = "Längengrad";
+"location_search.location_model.timezone" = "Zeitzone";
+"location_search.location_model.isp" = "ISP";
+"location_search.location_model.organization_name" = "Name der Organisation";
+"location_search.location_model.as_number" = "AS-Nummer und Organisation";
+"location_search.location_model.query" = "Abfrage";
 
 "about_app.rate" = "Bewertungs App";
 "about_app.share" = "App teilen";

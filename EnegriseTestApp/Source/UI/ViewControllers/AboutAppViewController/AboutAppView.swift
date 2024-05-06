@@ -12,8 +12,16 @@ final class AboutAppView: UIView {
     // MARK: -
     // MARK: Variables
     
-    let edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
-    let collectionView: UICollectionView = UICollectionView(frame: .null, collectionViewLayout: UICollectionViewLayout())
+    private var layout: UICollectionViewFlowLayout {
+        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            return layout
+        } else {
+            fatalError("unowned layout")
+        }
+    }
+    
+    static private let edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+    let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: baseLayout())
     
     // MARK: -
     // MARK: Init
@@ -53,16 +61,20 @@ final class AboutAppView: UIView {
         ])
     }
     
-    private func prepareLayout() {
-        let itemWidth: CGFloat = self.collectionView.frame.size.width - 32
-        let itemHeight: CGFloat = 100
+    private static func baseLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = self.edgeInsets
-        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-        layout.sectionInset = self.edgeInsets
+        layout.itemSize = CGSize(width: 50, height: 50)
         layout.minimumLineSpacing = 16
         layout.scrollDirection = .vertical
-        self.collectionView.collectionViewLayout = layout
+        
+        return layout
+    }
+    
+    private func updateLayout() {
+        let itemWidth: CGFloat = self.collectionView.frame.size.width - 32
+        let itemHeight: CGFloat = 100
+        self.layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         self.collectionView.alwaysBounceVertical = true
     }
     
@@ -72,6 +84,6 @@ final class AboutAppView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.prepareLayout()
+        self.updateLayout()
     }
 }

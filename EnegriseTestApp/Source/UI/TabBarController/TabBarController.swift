@@ -7,12 +7,6 @@
 
 import UIKit
 
-enum Tabs: Int {
-    case main
-    case search
-    case about
-}
-
 final class TabBarController: UITabBarController {
     
     // MARK: -
@@ -28,21 +22,22 @@ final class TabBarController: UITabBarController {
     // MARK: Private
     
     private func configure() {
-        
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = .gray
-            tabBar.standardAppearance = appearance
-            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
+            appearance.stackedLayoutAppearance.normal.iconColor = UIColor.darkGray
+            appearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
+            appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white]
+            self.tabBar.standardAppearance = appearance
+            self.tabBar.scrollEdgeAppearance = appearance
+        } else {
+            self.tabBar.tintColor = .white
+            self.tabBar.backgroundColor = .gray
         }
         
-        tabBar.tintColor = UIColor.white
-        tabBar.backgroundColor = UIColor.gray
-        tabBar.layer.borderWidth = 1
-        tabBar.layer.masksToBounds = true
-        
-        self.tabBar.isTranslucent = false
+        self.tabBar.layer.masksToBounds = true
         
         let mainScreenController = TimerViewController()
         let ipSearchController = LocationSearchViewController()
@@ -51,17 +46,17 @@ final class TabBarController: UITabBarController {
         mainScreenController.tabBarItem = UITabBarItem(
             title: "Timer",
             image: UIImage(systemName: "timer"),
-            tag: Tabs.main.rawValue
+            selectedImage: nil
         )
         ipSearchController.tabBarItem = UITabBarItem(
             title: "Location",
             image: UIImage(systemName: "mappin.circle"),
-            tag: Tabs.search.rawValue
+            selectedImage: nil
         )
         aboutAppController.tabBarItem = UITabBarItem(
             title: "About",
             image: UIImage(systemName: "star.circle"),
-            tag: Tabs.about.rawValue
+            selectedImage: nil
         )
         
         self.setViewControllers(
@@ -70,6 +65,7 @@ final class TabBarController: UITabBarController {
                 ipSearchController,
                 aboutAppController
             ],
-            animated: false)
+            animated: false
+        )
     }
 }

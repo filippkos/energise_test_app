@@ -12,50 +12,28 @@ final class Timer {
     // MARK: -
     // MARK: Variables
     
-    var lapDelta: CMTime?
-    
     private var startTime: CMTime?
-    
     private let clock: CMClock = CMClockGetHostTimeClock()
     
     // MARK: -
-    // MARK: Public Functions
+    // MARK: Public
     
     func start() {
-        self.startTime = CMClockGetTime(self.clock)
-    }
-    
-    func fixLap() -> (Int, Int, Int)? {
-        guard let startTime else { return nil }
-        let current: CMTime = CMClockGetTime(self.clock)
-        
-        defer {
-            self.startTime = nil
-            self.lapDelta = nil
-        }
-        
-        self.lapDelta = CMTimeSubtract(current, startTime)
-        
-        if let lapDelta {
-            let seconds = CMTimeGetSeconds(lapDelta)
-            return self.formatted(seconds: seconds)
-        } else {
-            return nil
-        }
+        self.startTime = self.clock.time
     }
     
     func formattedTime() -> (Int, Int, Int)? {
         guard let startTime else { return nil }
-        let current: CMTime = CMClockGetTime(self.clock)
-        let difference: CMTime = CMTimeSubtract(current, startTime)
+        let current: CMTime = self.clock.time
+        let difference: CMTime = current - startTime
         
-        let seconds = CMTimeGetSeconds(difference)
+        let seconds = difference.seconds
         
         return self.formatted(seconds: seconds)
     }
     
     // MARK: -
-    // MARK: Private Functions
+    // MARK: Private
     
     private func formatted(seconds: Float64) -> (Int, Int, Int) {
         let min = Int(seconds) / 60

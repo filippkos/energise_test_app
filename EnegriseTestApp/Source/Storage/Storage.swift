@@ -9,35 +9,33 @@ import Foundation
 
 class Storage {
     
-    var fileManager = FileManager()
+    private let fileManager = FileManager.default
+    private let locationModelURL: URL
+    private let encoder = JSONEncoder()
+    private let decoder = JSONDecoder()
     
-    func saveProfile(_ file: IPLocationModel) {
-        let encoder = JSONEncoder()
+    init() {
+        let document = self.fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        self.locationModelURL = document.appendingPathComponent("IPLocationModel.json")
+    }
+    
+    func saveProfile(_ file: LocationModel) {
         do {
-            let data = try encoder.encode(file)
-            if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                let fileURL = documentDirectory.appendingPathComponent("IPLocationModel.json")
-                try data.write(to: fileURL)
-                print("Model saved successfully.")
-            }
+           let data = try encoder.encode(file)
+           try data.write(to: self.locationModelURL)
         } catch {
             print("Error saving model: \(error)")
         }
     }
 
-    func loadProfile() -> IPLocationModel? {
-        if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let fileURL = documentDirectory.appendingPathComponent("IPLocationModel.json")
-            do {
-                let data = try Data(contentsOf: fileURL)
-                let decoder = JSONDecoder()
-                let profile = try decoder.decode(IPLocationModel.self, from: data)
-                print("Model loaded successfully.")
-                return profile
-            } catch {
-                print("Error loading model: \(error)")
-            }
+    func loadProfile() -> LocationModel? {
+        do {
+            let data = try Data(contentsOf: self.locationModelURL)
+            return try decoder.decode(LocationModel.self, from: data)
+        } catch {
+            print("Error loading model: \(error)")
         }
+    
         return nil
     }
 }

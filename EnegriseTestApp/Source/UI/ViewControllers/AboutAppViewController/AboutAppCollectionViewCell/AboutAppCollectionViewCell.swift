@@ -6,7 +6,26 @@
 //
 
 import UIKit
-import StoreKit
+
+struct AboutAppCollectionCellModel {
+    let title: String
+    let action: AboutAppCommand
+}
+
+final class AboutAppCommand {
+    private let action: () -> ()
+    
+    private(set) var isExecuted: Bool = false
+    
+    init(action: @escaping () -> Void) {
+        self.action = action
+    }
+    
+    func execute() {
+        self.action()
+        self.isExecuted = true
+    }
+}
 
 final class AboutAppCollectionViewCell: UICollectionViewCell {
     
@@ -22,8 +41,6 @@ final class AboutAppCollectionViewCell: UICollectionViewCell {
         
         return button
     }()
-    
-    var buttonHandler: (() -> ())?
     
     // MARK: -
     // MARK: Init
@@ -41,13 +58,11 @@ final class AboutAppCollectionViewCell: UICollectionViewCell {
     // MARK: -
     // MARK: Public
     
-    func configure(title: String) {
-        self.button.setTitle(title, for: .normal)
-    }
-
-    func add(action: @escaping () -> ()) {
-        self.buttonHandler = action
-        self.button.addTarget(self, action: #selector(self.handleTap), for: .touchUpInside)
+    func configure(with _model: AboutAppCollectionCellModel) {
+        self.button.setTitle(_model.title, for: .normal)
+        self.button.addAction(UIAction(handler: {_ in
+            _model.action.execute()
+        }), for: .touchUpInside)
     }
     
     // MARK: -
@@ -70,9 +85,5 @@ final class AboutAppCollectionViewCell: UICollectionViewCell {
             self.button.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.button.leftAnchor.constraint(equalTo: self.contentView.leftAnchor)
         ])
-    }
-    
-    @objc private func handleTap() {
-        self.buttonHandler?()
     }
 }

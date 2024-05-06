@@ -10,7 +10,7 @@ import Alamofire
 
 // MARK: - IPLocationModel
 
-struct IPLocationModel: Codable {
+struct LocationModel: Codable {
     let status, country, countryCode, region: String
     let regionName, city, zip: String
     let lat, lon: Double
@@ -23,7 +23,7 @@ struct IPLocationModel: Codable {
         case query
     }
     
-    typealias Loc = L10n.LocalizationSearch.LocationModel
+    typealias Loc = L10n.LocationSearch.LocationModel
     
     var tableModel: [(String, String)] {
         return [

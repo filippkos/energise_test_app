@@ -17,7 +17,7 @@ final class AboutAppViewController: UIViewController, RootViewGettable, UICollec
     // MARK: Variables
     
     private let storage = Storage()
-    var dataSource: [() -> ()]?
+    var dataSource: [AboutAppCollectionCellModel] = []
     
     // MARK: -
     // MARK: Life Cycle
@@ -28,11 +28,7 @@ final class AboutAppViewController: UIViewController, RootViewGettable, UICollec
         self.rootView?.collectionView.dataSource = self
         self.rootView?.collectionView.delegate = self
         self.rootView?.collectionView.register(AboutAppCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AboutAppCollectionViewCell.self))
-        self.dataSource = [
-            { self.rateApp() },
-            { self.shareApp() },
-            { self.contactUs() }
-        ]
+        self.fillDataSource()
     }
     
     override func loadView() {
@@ -67,11 +63,11 @@ final class AboutAppViewController: UIViewController, RootViewGettable, UICollec
         }
     }
     
-    private func localization() -> [String] {
-        return [
-            Loc.rate,
-            Loc.share,
-            Loc.contactUs
+    private func fillDataSource() {
+        self.dataSource = [
+            AboutAppCollectionCellModel(title: Loc.rate, action: AboutAppCommand(action: self.rateApp)),
+            AboutAppCollectionCellModel(title: Loc.share, action: AboutAppCommand(action: self.shareApp)),
+            AboutAppCollectionCellModel(title: Loc.contactUs, action: AboutAppCommand(action: self.contactUs))
         ]
     }
     
@@ -79,25 +75,15 @@ final class AboutAppViewController: UIViewController, RootViewGettable, UICollec
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.dataSource?.count ?? 0
+        self.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.rootView?.collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AboutAppCollectionViewCell.self), for: indexPath) as! AboutAppCollectionViewCell
-        cell.configure(title: self.localization()[indexPath.item])
-        cell.add { [weak self] in
-            if let self, let dataSource = self.dataSource {
-                dataSource[indexPath.item]()
-            }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AboutAppCollectionViewCell.self), for: indexPath)
+        if let buttonCell = cell as? AboutAppCollectionViewCell {
+            buttonCell.configure(with: self.dataSource[indexPath.item])
         }
         
         return cell
-    }
-    
-    // MARK: -
-    // MARK: UICollectionViewDelegate
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
     }
 }
