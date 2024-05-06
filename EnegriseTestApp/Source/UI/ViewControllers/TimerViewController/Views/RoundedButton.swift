@@ -110,6 +110,9 @@ final class RoundedButton: UIButton {
         self.heightAnchor.constraint(equalToConstant: 96.0).isActive = true
     }
     
+    // MARK: -
+    // MARK: Actions
+    
     @objc private func buttonTapped(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
