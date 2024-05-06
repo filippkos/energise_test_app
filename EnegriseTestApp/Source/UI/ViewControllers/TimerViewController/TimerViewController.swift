@@ -36,7 +36,6 @@ final class TimerViewController: UIViewController, RootViewGettable {
     // MARK: Private
     
     private func setup() {
-
         self.prepareDisplayLink()
         self.rootView?.playButton.addTarget(
             self,
@@ -49,8 +48,6 @@ final class TimerViewController: UIViewController, RootViewGettable {
         self.displayLink = CADisplayLink(target: self, selector: #selector(self.linkTriggered(displayLink:)))
         self.displayLink.add(to: .main, forMode: .common)
     }
-    
-    
     
     @objc private func linkTriggered(displayLink: CADisplayLink) {
         guard let time = self.clockTimer.formattedTime(), !buttonAnimationStatus else { return }
@@ -65,8 +62,6 @@ final class TimerViewController: UIViewController, RootViewGettable {
         } else {
             self.rootView?.playButton.startAnimation()
             self.rootView?.timeLabel.stopAnimation()
-            guard let time = self.clockTimer.fixLap() else { return }
-            self.rootView?.timeLabel.text = "\(time.0.toBondFormat()):\(time.1.toBondFormat()):\(time.2.toBondFormat())"
         }
         
         self.buttonAnimationStatus.toggle()

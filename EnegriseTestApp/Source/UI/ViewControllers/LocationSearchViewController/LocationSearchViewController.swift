@@ -15,11 +15,12 @@ final class LocationSearchViewController: UIViewController, RootViewGettable, UI
     
     // MARK: -
     // MARK: Variables
+
+    private var model: LocationModel?
     
+    private let refreshControl = UIRefreshControl()
+    private let networkProvider = NetworkProvider()
     private let storage = Storage()
-    private var searchText: String = ""
-    private var model: IPLocationModel?
-    var refreshControl = UIRefreshControl()
     
     // MARK: -
     // MARK: Life Cycle
@@ -27,10 +28,14 @@ final class LocationSearchViewController: UIViewController, RootViewGettable, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.rootView?.tableView.dataSource = self
-        self.rootView?.tableView.register(LocationSearchTableViewCell.self, forCellReuseIdentifier: String(describing: LocationSearchTableViewCell.self))
+        guard let view = self.rootView else {
+            fatalError("View didn't load")
+        }
+        
+        view.tableView.dataSource = self
+        view.tableView.register(cellClass: LocationSearchTableViewCell.self)
         self.rootView?.button.addTarget(self, action: #selector(self.buttonAction), for: .touchUpInside)
-        self.request()
+        self.location()
         self.configureRefreshing()
     }
     
@@ -43,53 +48,44 @@ final class LocationSearchViewController: UIViewController, RootViewGettable, UI
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.refreshControl.beginRefreshing()
-        self.request()
-        self.refreshControl.endRefreshing()
+        defer { self.refreshControl.endRefreshing() }
+        self.location()
     }
     
-    func configureRefreshing() {
-        refreshControl.addTarget(self, action: #selector(LocationSearchViewController.handleRefresh(_:)), for: .valueChanged)
+    private func configureRefreshing() {
+        self.refreshControl.addTarget(
+            self,
+            action: #selector(handleRefresh(_:)),
+            for: .valueChanged
+        )
         self.rootView?.tableView.addSubview(self.refreshControl)
     }
     
     // MARK: -
     // MARK: Private
     
-    private func request() {
-        AF.request("http://ip-api.com/json/").responseData(completionHandler: { response in
-            if let error = response.error {
-                debugPrint("Error downloading data: \(error)")
-                self.model = self.storage.loadProfile()
-                self.updateLocation()
-            } else {
-                guard let data = response.data else {
-                    print("Data error")
-                    self.model = self.storage.loadProfile()
+    private func location() {
+        self.networkProvider.perform(
+            LocationURLRequest(),
+            completion: { (result: Result<LocationModel, Error>) -> Void in
+                switch result {
+                case .success(let model):
+                    self.model = model
                     self.updateLocation()
-                    return
-                }
-                let decoder = JSONDecoder()
-                if let info = try? decoder.decode(IPLocationModel.self, from: data) {
-                    self.model = info
-                    self.storage.saveProfile(info)
-                    self.updateLocation()
-                } else {
-                    self.model = self.storage.loadProfile()
-                    self.updateLocation()
+                    self.rootView?.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
                 }
             }
-        })
-    }
+        )
+   }
     
     private func updateLocation() {
-        self.rootView?.setPoint(location: self.location()!)
-        self.rootView?.tableView.reloadData()
+        self.rootView?.setPoint(location: self.coordinates()!)
     }
     
-    private func location() -> CLLocationCoordinate2D? {
-        guard let model else { return nil }
-        
-        return CLLocationCoordinate2D(latitude: model.lat, longitude: model.lon)
+    private func coordinates() -> CLLocationCoordinate2D? {
+        return self.model.map { CLLocationCoordinate2D(latitude: $0.lat, longitude: $0.lon) }
     }
     
     // MARK: -
@@ -100,11 +96,9 @@ final class LocationSearchViewController: UIViewController, RootViewGettable, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LocationSearchTableViewCell.self), for: indexPath)
-        if let locationCell = cell as? LocationSearchTableViewCell {
-            if let model = self.model?.tableModel[indexPath.item] {
-                locationCell.configure(title: model.0, value: model.1)
-            }
+        let cell = tableView.dequeueReusableCell(cellClass: LocationSearchTableViewCell.self)
+        if let model = self.model?.tableModel[indexPath.item] {
+            cell.configure(title: model.0, value: model.1)
         }
         
         return cell
@@ -113,7 +107,7 @@ final class LocationSearchViewController: UIViewController, RootViewGettable, UI
     // MARK: -
     // MARK: Actions
     
-    @objc func buttonAction(sender: UIButton!) {
-        self.request()
+    @objc func buttonAction(sender: UIButton) {
+        self.location()
     }
 }

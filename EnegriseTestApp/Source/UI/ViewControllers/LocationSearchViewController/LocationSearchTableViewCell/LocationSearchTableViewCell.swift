@@ -21,8 +21,21 @@ final class LocationSearchTableViewCell: UITableViewCell {
         return stack
     }()
 
-    var titleLabel = UILabel()
-    var valueLabel = UILabel()
+    private var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14.0)
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    var valueLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14.0)
+        label.numberOfLines = 0
+        
+        return label
+    }()
     
     // MARK: -
     // MARK: Init
@@ -49,6 +62,7 @@ final class LocationSearchTableViewCell: UITableViewCell {
     // MARK: Private
     
     private func setup() {
+        self.selectionStyle = .none
         self.prepareViews()
         self.prepareConstraints()
     }
@@ -57,10 +71,6 @@ final class LocationSearchTableViewCell: UITableViewCell {
         self.contentView.addSubview(self.stackView)
         self.stackView.addArrangedSubview(self.titleLabel)
         self.stackView.addArrangedSubview(self.valueLabel)
-        self.titleLabel.font = UIFont.systemFont(ofSize: 14.0)
-        self.titleLabel.numberOfLines = 0
-        self.valueLabel.font = UIFont.systemFont(ofSize: 14.0)
-        self.valueLabel.numberOfLines = 0
     }
     
     private func prepareConstraints() {
